@@ -12,7 +12,7 @@ alias dev="docker-compose -f docker-compose.common.yml -f docker-compose.develop
 alias prod="docker-compose -f docker-compose.common.yml -f docker-compose.production.yml"
 ```
 
-## Developement Server
+## Development Server
 ```bash
 docker-compose -f docker-compose.common.yml -f docker-compose.development.yml up
 ```
