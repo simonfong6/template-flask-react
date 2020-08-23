@@ -24,4 +24,4 @@ services:
     stdin_open: true
     ports:
       - 3004:3000
-    command: npm start
+    command: bash -c "npm install && npm start"
