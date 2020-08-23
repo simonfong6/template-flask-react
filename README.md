@@ -2,22 +2,45 @@
 
 # Dependencies
 - Docker
+- Docker Compose
 
 # Development
 Run all commands at the root of the repo.
 
-## Shortcuts
-```bash
-alias dev="docker-compose -f docker-compose.common.yml -f docker-compose.development.yml"
-alias prod="docker-compose -f docker-compose.common.yml -f docker-compose.production.yml"
-```
+### Note
+These are all `docker-compose` commands.
 
 ## Development Server
+
+### Start the server
 ```bash
-docker-compose -f docker-compose.common.yml -f docker-compose.development.yml up
+./scripts/development.sh up
 ```
 
-## Production Build
+### Start the server in the background
 ```bash
-docker-compose -f docker-compose.common.yml -f docker-compose.production.yml up
+./scripts/development.sh up -d
 ```
+
+## Tests
+### Run tests
+```bash
+./scripts/test.sh
+```
+
+
+## Production Build
+### Start the server
+```bash
+./scripts/development.sh up
+```
+
+### Start the server in the background
+```bash
+./scripts/development.sh up -d
+```
+
+# Deployment
+- Nginx Reverse Proxy
+- Symlink the nginx confs
+- Start the production and optionally dev containers.
