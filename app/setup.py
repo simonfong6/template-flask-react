@@ -12,8 +12,10 @@ setup(
     url="https://github.com/simonfong6/template-python-flask",
     packages=find_packages(),
     install_requires=[
-        'flask >= 1.1.1',
-        'pymongo >= 3.10.1',
+        'flask == 1.1.2',
+        'pymongo == 3.10.1',
+        'Faker == 4.1.2',
+        'pytest == 6.0.1',
     ],
     python_requires='>=3.6',
     classifiers=[
