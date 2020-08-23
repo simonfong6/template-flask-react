@@ -8,6 +8,8 @@ import time
 from flask import Flask
 from flask import send_from_directory
 
+from backend.api import register_sub_site
+
 
 # Configure logging.
 logging.basicConfig(filename='app/server.log')
@@ -20,6 +22,7 @@ app = Flask(
     static_folder='/code/frontend/frontend/build',  # Serve the React files.
     static_url_path='/'
 )
+register_sub_site(app)
 
 # Allow fetching root serves index file.
 @app.route('/')
@@ -28,4 +31,11 @@ def index():
 
 @app.route('/time')
 def get_current_time():
+    logger.info("Time")
     return {'time': time.time()}
+
+@app.route('/hello')
+def respond():
+    from backend.hello import hello
+    logger.info("Hello")
+    return hello()

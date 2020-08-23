@@ -7,10 +7,10 @@ services:
     volumes:
       - .:/code
     environment:
-      FLASK_APP: ./app/app/server.py
+      FLASK_APP: ./app/backend/server.py
       FLASK_RUN_HOST: 0.0.0.0
-    command: flask run
-  frontend:
-    build: ./frontend
-    volumes:
-      - ./frontend/frontend:/code
+    command: ./app/run.sh
+  # frontend:
+  #   build: ./frontend
+  #   volumes:
+  #     - ./frontend/frontend:/code

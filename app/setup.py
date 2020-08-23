@@ -1,16 +1,13 @@
 from setuptools import find_packages
 from setuptools import setup
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-
 setup(
-    name="app",
+    name="backend",
     version="0.0.1",
     author="Simon Fong",
     author_email="simonfong6@gmail.com",
     description="A package.",
-    long_description=long_description,
+    long_description="A longer description.",
     long_description_content_type="text/markdown",
     url="https://github.com/simonfong6/template-python-flask",
     packages=find_packages(),
