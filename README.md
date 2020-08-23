@@ -1,8 +1,23 @@
-# template-python-flask
-Template Python Flask App
+# Template Flask React App
 
-# Install Package
-At the root of the repo run:
+# Dependencies
+- Docker
+
+# Development
+Run all commands at the root of the repo.
+
+## Shortcuts
+```bash
+alias dev="docker-compose -f docker-compose.common.yml -f docker-compose.development.yml"
+alias prod="docker-compose -f docker-compose.common.yml -f docker-compose.production.yml"
 ```
-bash bin/install_app.sh
+
+## Developement Server
+```bash
+docker-compose -f docker-compose.common.yml -f docker-compose.development.yml up
+```
+
+## Production Build
+```bash
+docker-compose -f docker-compose.common.yml -f docker-compose.production.yml up
 ```

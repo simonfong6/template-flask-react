@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="template-python-flask",
+    name="app",
     version="0.0.1",
     author="Simon Fong",
     author_email="simonfong6@gmail.com",
@@ -16,6 +16,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'flask >= 1.1.1',
+        'pymongo >= 3.10.1',
     ],
     python_requires='>=3.6',
     classifiers=[
