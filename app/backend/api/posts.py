@@ -2,11 +2,11 @@
 """
 Posts Blueprint
 """
-from bson.json_util import dumps as jsonify
 from flask import Blueprint
+from flask import jsonify
+from flask import request
 
-from backend.database import get_database
-from backend.database.seed import main
+from backend.database import get_flask_database
 from backend.observability import get_logger
 
 
@@ -18,7 +18,7 @@ posts = Blueprint('posts', __name__)
 
 @posts.route('/')
 def index():
-    db = get_database()
+    db = get_flask_database()
     posts = db.posts
 
     cursor = posts.find({})
@@ -26,12 +26,11 @@ def index():
     for document in cursor:
         docs.append(document)
         logger.info(document)
-    print(jsonify(cursor))
     return jsonify(docs)
 
 @posts.route('/new')
 def create():
-    db = db = get_database()
+    db = get_flask_database()
     posts = db.posts
 
     import datetime
@@ -44,13 +43,19 @@ def create():
     }
 
     post_id = posts.insert_one(post).inserted_id
-    return f"Post ID: {post_id}"
 
-@posts.route('/seed')
-def seed():
-    main()
-    return "Seeding"
+    post = posts.find_one({"_id": post_id})
+    logger.info(post)
 
-@posts.route('/post')
-def post():
-    return "post"
+    return jsonify(post)
+
+@posts.route('/author')
+def fetch_by_author():
+    db = get_flask_database()
+    posts = db.posts
+
+    author = request.args['author']
+
+    post = posts.find_one({"author": author})
+
+    return jsonify(post)

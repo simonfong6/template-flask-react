@@ -9,6 +9,7 @@ from flask import Flask
 from flask import send_from_directory
 
 from backend.api import register_sub_site
+from backend.database.json import CustomJSONEncoder
 
 
 # Configure logging.
@@ -22,6 +23,7 @@ app = Flask(
     static_folder='/code/frontend/frontend/build',  # Serve the React files.
     static_url_path='/'
 )
+app.json_encoder = CustomJSONEncoder
 register_sub_site(app)
 
 # Allow fetching root serves index file.
@@ -33,9 +35,3 @@ def index():
 def get_current_time():
     logger.info("Time")
     return {'time': time.time()}
-
-@app.route('/hello')
-def respond():
-    from backend.hello import hello
-    logger.info("Hello")
-    return hello()

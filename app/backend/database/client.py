@@ -5,6 +5,7 @@ MongoDB Client
 from os import environ
 from urllib.parse import quote_plus
 
+from flask import g
 from pymongo import MongoClient
 
 
@@ -31,3 +32,9 @@ def get_database():
     database = client[name]
 
     return database
+
+def get_flask_database():
+    if 'database' not in g:
+        g.database = get_database()
+
+    return g.database

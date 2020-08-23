@@ -15,7 +15,6 @@ from backend.database import get_database
 
 POSSIBLE_TAGS = ['vacation', 'business', 'technology', 'mobility', 'apparel']
 faker = Faker('en')
-Faker.seed(0)
 
 
 class MongoSeeder:
@@ -27,7 +26,7 @@ class MongoSeeder:
         print('Clearing collection...')
         self.db.posts.remove({})
         print('Inserting new designs...')
-        posts = [generate_post() for _ in range(100)]
+        posts = [generate_post() for _ in range(5)]
         self.db.posts.insert_many(posts)
         print('Done.')
 
@@ -51,6 +50,7 @@ def generate_post():
 
 
 def main():
+    Faker.seed(0)
     MongoSeeder().seed()
 
 
