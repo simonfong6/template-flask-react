@@ -10,6 +10,3 @@ RUN apt update && \
 COPY frontend/package.json package.json
 COPY frontend/package-lock.json package-lock.json
 RUN npm install
-
-EXPOSE 3000
-CMD ["npm start""]

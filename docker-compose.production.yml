@@ -6,6 +6,8 @@ services:
       MONGO_DATABASE: example_prod
     depends_on:
       - frontend
+    ports:
+      - "3005:5000"
   frontend:
     build: ./frontend
     volumes:
