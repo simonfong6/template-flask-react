@@ -3,7 +3,9 @@ services:
   api:
     environment:
       FLASK_ENV: production
-    depends_on: frontend
+      MONGO_DATABASE: example_prod
+    depends_on:
+      - frontend
   frontend:
     build: ./frontend
     volumes:
