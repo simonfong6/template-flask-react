@@ -10,7 +10,7 @@ services:
       FLASK_APP: ./app/backend/server.py
       FLASK_RUN_HOST: 0.0.0.0
     command: ./app/run.sh
-  # frontend:
-  #   build: ./frontend
-  #   volumes:
-  #     - ./frontend/frontend:/code
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend/frontend:/code
