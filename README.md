@@ -44,3 +44,7 @@ These are all `docker-compose` commands.
 - Nginx Reverse Proxy
 - Symlink the nginx confs
 - Start the production and optionally dev containers.
+
+# TODO
+- Intergrate with CI/CD, Buildkite?
+- ECS/EKS
