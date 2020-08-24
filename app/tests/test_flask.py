@@ -28,7 +28,7 @@ def test_posts(client):
 
     # Plain seed data.
     data = response.get_json()
-    assert len(data) == 5
+    assert len(data) == 4
 
     # Add a post and see if it increases.
     response = client.get('/api/posts/new')
