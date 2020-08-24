@@ -27,6 +27,14 @@ function App() {
           Learn React
         </a>
         <p>The current time is {currentTime}. (From API server: /time)</p>
+        <p>
+          <a
+            className="App-link"
+            href="https://github.com/simonfong6/template-flask-react"
+          >
+          Template Flask React
+          </a>
+        </p>
       </header>
     </div>
   );
