@@ -26,7 +26,7 @@ function App() {
         >
           Learn React
         </a>
-        <p>The current time is {currentTime}. (From API server)</p>
+        <p>The current time is {currentTime}. (From API server: /time)</p>
       </header>
     </div>
   );
