@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  buildkite:
+    image: buildkite/agent:ubuntu
+    working_dir: /code
+    volumes:
+      - .:/code
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      BUILDKITE_AGENT_TOKEN: "c9fc45a22d273a24728a70141514d1ac9b25e4d613f41afe1a"
+      VOLUME_PATH: $PWD/

@@ -3,7 +3,7 @@ services:
   api:
     build: ./app
     volumes:
-      - .:/code
+      - $VOLUME_PATH.:/code
     environment:
       FLASK_APP: ./app/backend/server.py
       FLASK_RUN_HOST: 0.0.0.0
