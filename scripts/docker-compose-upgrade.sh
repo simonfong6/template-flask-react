@@ -5,7 +5,6 @@ echo "Path: $path"
 echo "VOLUME_PATH: $VOLUME_PATH"
 VOLUME_PATH="${path/\/buildkite/$VOLUME_PATH}"
 echo "VOLUME_PATH: $VOLUME_PATH"
-
 rm $(which docker-compose)
 curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
@@ -15,5 +14,6 @@ export MONGO_HOST="mongo"
 export MONGO_USERNAME="root"
 export MONGO_PASSWORD="example"
 
+set -e
 echo "Running tests."
 ./scripts/test.sh
