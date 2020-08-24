@@ -19,7 +19,7 @@ services:
   frontend:
     build: ./frontend
     volumes:
-      - ./frontend/frontend:/code
+      - $VOLUME_PATH./frontend/frontend:/code
     # https://github.com/facebook/create-react-app/issues/8688#issuecomment-602110747
     stdin_open: true
     ports:
