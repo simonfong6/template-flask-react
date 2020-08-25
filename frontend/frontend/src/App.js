@@ -35,6 +35,7 @@ function App() {
           Template Flask React
           </a>
         </p>
+        <p>by Simon Fong</p>
       </header>
     </div>
   );
