@@ -59,3 +59,10 @@ def fetch_by_author():
     post = posts.find_one({"author": author})
 
     return jsonify(post)
+
+@posts.route('/justin')
+def justin():
+
+    return jsonify({
+        "Suck": "Butt"
+    })
