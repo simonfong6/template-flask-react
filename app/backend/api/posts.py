@@ -61,7 +61,7 @@ def fetch_by_author():
     return jsonify(post)
 
 @posts.route('/justin')
-def fetch_by_author():
+def justin():
 
     return jsonify({
         "Suck": "Butt"
