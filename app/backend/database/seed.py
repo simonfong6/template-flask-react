@@ -11,6 +11,10 @@ from bson.objectid import ObjectId
 from faker import Faker
 
 from backend.database import get_database
+from backend.observability import get_logger
+
+
+logger = get_logger(__name__)
 
 
 POSSIBLE_TAGS = ['vacation', 'business', 'technology', 'mobility', 'apparel']
@@ -23,12 +27,15 @@ class MongoSeeder:
         self.db = get_database()
 
     def seed(self):
-        print('Clearing collection...')
+        if not self.db:
+            logger.warning("No database to seed.")
+            return
+        logger.info('Clearing collection...')
         self.db.posts.remove({})
-        print('Inserting new designs...')
+        logger.info('Inserting new data...')
         posts = [generate_post() for _ in range(5)]
         self.db.posts.insert_many(posts)
-        print('Done.')
+        logger.info('Done.')
 
 
 def choose_max_n_times(possibilities, max_n):
