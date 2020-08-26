@@ -66,3 +66,11 @@ def justin():
     return jsonify({
         "Suck": "Butt"
     })
+
+@posts.route('/jason')
+def jason():
+
+    return jsonify({
+        "message": "Jason hates dogs"
+    })
+
