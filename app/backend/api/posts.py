@@ -66,3 +66,10 @@ def justin():
     return jsonify({
         "Suck": "Butt"
     })
+
+@posts.route('/factorial/<num>')
+def facotrial(num):
+
+    return jsonify({
+        "answer": num
+    })
