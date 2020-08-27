@@ -55,3 +55,11 @@ def test_time(client):
     data = response.get_json()
 
     assert 'time' in data
+
+def test_factorial(client):
+    # Add a post and see if it increases.
+    response = client.get('/api/posts/factorial/4')
+    data = response.get_json()
+    print(data)
+
+    assert data['answer'] == 24
