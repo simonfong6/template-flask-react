@@ -69,6 +69,7 @@ def justin():
 
 @posts.route('/factorial/<num>')
 def factorial(num):
+    num = int(num)
     product = 1
     for num in range(1, num + 1):
 	    product *= num  
