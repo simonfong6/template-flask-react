@@ -68,8 +68,10 @@ def justin():
     })
 
 @posts.route('/factorial/<num>')
-def facotrial(num):
-
+def factorial(num):
+    product = 1
+    for num in range(1, num + 1):
+	    product *= num  
     return jsonify({
-        "answer": num
+        "answer": product
     })
