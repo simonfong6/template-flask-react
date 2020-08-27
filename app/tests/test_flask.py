@@ -62,4 +62,4 @@ def test_factorial(client):
     data = response.get_json()
     print(data)
 
-    assert data['answer'] == '24'
+    assert data['answer'] == 24
