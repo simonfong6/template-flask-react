@@ -13,6 +13,7 @@ spec:
   # Replace with the IP of your minikube node / master node
   externalIPs:
     - 192.168.64.2
+    - 172.17.0.4
   selector:
     app: template-flask-react
     tier: backend
