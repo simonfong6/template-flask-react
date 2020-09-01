@@ -3,6 +3,7 @@ services:
   buildkite:
     image: buildkite/agent:ubuntu
     working_dir: /code
+    network_mode: "host"
     volumes:
       - .:/code
       - /var/run/docker.sock:/var/run/docker.sock
