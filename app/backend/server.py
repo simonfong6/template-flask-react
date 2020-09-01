@@ -10,10 +10,11 @@ from flask import send_from_directory
 
 from backend.api import register_sub_site
 from backend.database.json import CustomJSONEncoder
+from backend.database.seed import main
 
 
 # Configure logging.
-logging.basicConfig(filename='app/server.log')
+logging.basicConfig(filename='server.log')
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
@@ -34,4 +35,16 @@ def index():
 @app.route('/time')
 def get_current_time():
     logger.info("Time")
-    return {'time': time.time()}
+    return {
+        'time': time.time(),
+        'status': 'success',
+        'version': 0.3
+    }
+
+@app.route('/seed')
+def seed():
+    logger.info("Seed")
+    main()
+    return {
+        'message': 'Seeding database.'
+    }

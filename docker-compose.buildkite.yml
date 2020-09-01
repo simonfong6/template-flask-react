@@ -7,6 +7,12 @@ services:
       - .:/code
       - /var/run/docker.sock:/var/run/docker.sock
       - ./builds:/buildkite/builds
+      - $HOME/.kube:/root/.kube
+      - $HOME/.minikube:$HOME/.minikube
     environment:
-      BUILDKITE_AGENT_TOKEN: "c9fc45a22d273a24728a70141514d1ac9b25e4d613f41afe1a"
+      BUILDKITE_AGENT_TOKEN: $BUILDKITE_AGENT_TOKEN
       VOLUME_PATH: $PWD
+      DOCKER_TLS_VERIFY: $MINIKUBE_DOCKER_TLS_VERIFY
+      DOCKER_HOST: $MINIKUBE_DOCKER_HOST
+      DOCKER_CERT_PATH: $MINIKUBE_DOCKER_CERT_PATH
+      MINIKUBE_ACTIVE_DOCKERD: $MINIKUBE_MINIKUBE_ACTIVE_DOCKERD
