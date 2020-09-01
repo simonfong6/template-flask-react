@@ -8,5 +8,5 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./builds:/buildkite/builds
     environment:
-      BUILDKITE_AGENT_TOKEN: "c9fc45a22d273a24728a70141514d1ac9b25e4d613f41afe1a"
+      BUILDKITE_AGENT_TOKEN: $BUILDKITE_AGENT_TOKEN
       VOLUME_PATH: $PWD
