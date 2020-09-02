@@ -38,7 +38,7 @@ def get_current_time():
     return {
         'time': time.time(),
         'status': 'success',
-        'version': 0.7
+        'version': 0.8
     }
 
 @app.route('/seed')
