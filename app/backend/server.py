@@ -21,7 +21,7 @@ logger.setLevel(logging.INFO)
 
 app = Flask(
     __name__,
-    static_folder='/code/frontend/frontend/build',  # Serve the React files.
+    static_folder='/code/build',  # Serve the React files.
     static_url_path='/'
 )
 app.json_encoder = CustomJSONEncoder
@@ -38,7 +38,7 @@ def get_current_time():
     return {
         'time': time.time(),
         'status': 'success',
-        'version': 0.8
+        'version': 0.9
     }
 
 @app.route('/seed')

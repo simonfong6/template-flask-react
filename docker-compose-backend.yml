@@ -1,5 +1,7 @@
 version: '3.8'
 services:
   api:
-    build: ./app
-    image: template-flask-react:0.8
+    build: .
+    image: template-flask-react:0.9
+    ports:
+      - 5000:5000
