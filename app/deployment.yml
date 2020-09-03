@@ -21,7 +21,7 @@ spec:
             - containerPort: 5000
           env:
             - name: FLASK_APP
-              value: ./backend/server.py
+              value: ./app/backend/server.py
             - name: FLASK_RUN_HOST
               value:  0.0.0.0
             - name: MONGO_HOST
