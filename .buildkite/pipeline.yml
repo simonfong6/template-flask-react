@@ -4,3 +4,8 @@ steps:
   - wait
   - command: echo $MONGO_HOST
   - command: kubectl get all
+  - wait
+  - command: kubectl apply -f ./kubernetes/service.yml
+  - command: kubectl apply -f ./kubernetes/service.yml
+  - wait
+  - command: kubectl get all
