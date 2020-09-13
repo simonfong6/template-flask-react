@@ -1,3 +1,5 @@
 steps:
   - label: "Example Test"
     command: echo "Hello!"
+  - wait
+  - command: echo $MONGO_HOST
