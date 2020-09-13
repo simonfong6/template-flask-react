@@ -5,12 +5,9 @@ services:
     volumes:
       - .:/code
     environment:
-      FLASK_APP: ./app/backend/server.py
-      FLASK_RUN_HOST: 0.0.0.0
       MONGO_HOST: $MONGO_HOST
       MONGO_USERNAME: $MONGO_USERNAME
       MONGO_PASSWORD: $MONGO_PASSWORD
-      FLASK_ENV: development
       MONGO_DATABASE: example_test
     command: bash -c "pip3 install ./app && pytest ./app/tests"
   mongo:
