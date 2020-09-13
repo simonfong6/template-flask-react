@@ -5,6 +5,8 @@ steps:
   - command: echo $MONGO_HOST
   - command: kubectl get all
   - wait
+  - command: docker-compose -f docker-compose-backend.yml build
+  - wait
   - command: kubectl apply -f ./kubernetes/service.yml
   - command: kubectl apply -f ./kubernetes/deployment.yml
   - wait
