@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
-
-# Current directory of script.
-# https://stackoverflow.com/questions/59895/how-to-get-the-source-directory-of-a-bash-script-from-within-the-script-itself
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-source "$DIR/pre-compose.sh"
+PROJECT_NAME="template-flask-react_test"
+DOCKER_COMPOSE_FILE="docker-compose.test.yml"
 
 docker-compose \
-  -f docker-compose.base.yml \
-  -f docker-compose.dev-common.yml \
-  -f docker-compose.test.yml \
-  -p ${PROJECT_NAME}_test \
+  -f $DOCKER_COMPOSE_FILE \
+  -p $PROJECT_NAME \
   up \
     --abort-on-container-exit\
     --exit-code-from api \
@@ -17,10 +12,8 @@ docker-compose \
 code=$?
 
 docker-compose \
-  -f docker-compose.base.yml \
-  -f docker-compose.dev-common.yml \
-  -f docker-compose.test.yml \
-  -p ${PROJECT_NAME}_test \
+  -f $DOCKER_COMPOSE_FILE \
+  -p $PROJECT_NAME \
   down
 
 exit $code
