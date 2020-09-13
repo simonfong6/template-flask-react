@@ -1,8 +1,4 @@
 steps:
-  - label: "Example Test"
-    command: echo "Hello!"
-  - wait
-  - command: echo $MONGO_HOST
   - command: kubectl get all
   - wait
   - command: docker-compose -f docker-compose-backend.yml build
