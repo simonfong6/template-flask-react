@@ -3,3 +3,4 @@ steps:
     command: echo "Hello!"
   - wait
   - command: echo $MONGO_HOST
+  - command: kubectl get all
