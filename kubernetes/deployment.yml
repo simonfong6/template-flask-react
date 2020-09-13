@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: template-flask-react
-          image: template-flask-react:0.9
+          image: template-flask-react:0.10
           ports:
             - containerPort: 5000
           env:
