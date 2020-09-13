@@ -31,7 +31,7 @@ class MongoSeeder:
             logger.warning("No database to seed.")
             return
         logger.info('Clearing collection...')
-        self.db.posts.remove({})
+        self.db.posts.delete_many({})
         logger.info('Inserting new data...')
         posts = [generate_post() for _ in range(5)]
         self.db.posts.insert_many(posts)
